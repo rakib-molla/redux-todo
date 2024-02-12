@@ -13,9 +13,18 @@ function AddTodoModal() {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('');
   const dispatch = useAppDispatch()
+
+  
+
   const handleSubmit = (e)=>{
     e.preventDefault();
+
+    const randomString = Math.random().toString(36).substring(2, 7)
+
+    console.log(randomString)
+
     const data = {
+      id: randomString,
       title,
       description
     }
