@@ -25,7 +25,7 @@ function AddTodoModal() {
   // ? [actualFunctionForPost, {data, isLoading, isSuccess, isError,}] = mutate();
   const  [addTodo, {isLoading, data,  isError, isSuccess }] = useAddTodoMutation();
   
-  console.log({data,isLoading, isSuccess, isError});
+  // console.log({data,isLoading, isSuccess, isError});
 
   const handleSubmit = (e)=>{
     e.preventDefault();

@@ -15,6 +15,7 @@ const TodoContainer = () => {
   const {data: todos, isLoading, } = useGetTodosQuery(priority);
 
 
+
   if(isLoading){
     return <p>Loading....</p>
   }
@@ -29,14 +30,17 @@ const TodoContainer = () => {
         <div className="bg-white w-full p-5 rounded-lg space-y-3">
           {
             todos?.data?.map((item)=>(
-              <TodoCard {...item} key={item.id}/>
+              <TodoCard {...item} key={item?._id}/>
             ))
           }
           
         </div>
-        {/* <div className="bg-white flex items-center justify-center font-bold p-2 rounded-md">
+        
+          {todos?.data?.length ? '' : <div className="bg-white flex items-center justify-center font-bold p-2 rounded-md">
                <p>There is no task available</p>
-            </div> */}
+            </div> }
+        
+        
       </div>
     </div>
   );
